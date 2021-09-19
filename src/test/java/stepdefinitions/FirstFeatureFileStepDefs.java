@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.AllPages;
 import pages.android.APIDemosPage;
 import pages.android.MainPage;
 import pages.android.PreferenceDependenciesPage;
@@ -11,13 +12,7 @@ import utilities.Driver;
 
 public class FirstFeatureFileStepDefs {
 
-    MainPage mainPage = new MainPage();
-    PreferencePage preferencePage = new PreferencePage();
-    PreferenceDependenciesPage preferenceDependenciesPage = new PreferenceDependenciesPage();
-    APIDemosPage apiDemosPage = new APIDemosPage();
-
-
-
+    AllPages elelemnts = new AllPages();
 
     @Given("install the app on device")
     public void install_the_app_on_device() {
@@ -26,37 +21,39 @@ public class FirstFeatureFileStepDefs {
 
     @When("user clicks on API Demos")
     public void user_clicks_on_api_demos() {
-       mainPage.apiDemos.click();
+       elelemnts.mainPage().apiDemos.click();
     }
 
     @When("user clicks on Preference")
     public void user_clicks_on_preference() {
-      apiDemosPage.preference.click();
+      elelemnts.apiDemosPage().preference.click();
     }
 
     @When("user clicks on Preference Dependencies")
     public void user_clicks_on_preference_dependencies() {
-       preferencePage.preferenceDependencies.click();
+       elelemnts.preferencePage().preferenceDependencies.click();
     }
 
     @When("user check the check box")
     public void user_check_the_check_box() {
-        preferenceDependenciesPage.checkBox.click();
+        elelemnts.preferenceDependenciesPage().checkBox.click();
     }
 
     @When("user clicks on WiFi settings")
     public void user_clicks_on_wi_fi_settings() {
-        preferenceDependenciesPage.wifiSettings.click();
+        elelemnts.preferenceDependenciesPage().wifiSettings.click();
     }
 
     @When("user provide a test to text box {string}")
-    public void user_provide_a_test_to_text_box(String text) {
-       preferenceDependenciesPage.textBox.sendKeys(text);
+    public void user_provide_a_test_to_text_box(String text) throws InterruptedException {
+        Driver.getAppiumDriver().getKeyboard();
+        Thread.sleep(2000);
+        elelemnts.preferenceDependenciesPage().textBox.sendKeys(text);
     }
 
     @Then("user clicks Ok button")
     public void user_clicks_ok_button() {
-      preferenceDependenciesPage.okButton.click();
+      elelemnts.preferenceDependenciesPage().okButton.click();
     }
 
 }

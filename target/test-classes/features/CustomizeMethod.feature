@@ -1,6 +1,6 @@
 @mehtod
   Feature: APi demos
-    Scenario: Expandable list
+    Scenario:  reusable methods
       Given install the app on device
       When user click on "API Demos"
       When user click on "Views"

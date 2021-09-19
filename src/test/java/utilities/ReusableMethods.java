@@ -18,8 +18,8 @@ public class ReusableMethods {
 
     //pages
     public static void goToPage(String pageName) {
-     //   AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
-        List<AndroidElement> pages = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView");
+        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+        List<AndroidElement> pages = driver.findElementsByXPath("//android.widget.TextView");
         for (AndroidElement page : pages) {
             if (page.getText().equals(pageName)) {
                 System.out.println(page.getText());

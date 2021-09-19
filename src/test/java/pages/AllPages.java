@@ -1,6 +1,10 @@
 package pages;
 
 import pages.android.*;
+import pages.ios.AlertViewsPage;
+import pages.ios.HomePage;
+import pages.ios.PickerViewsPage;
+import pages.ios.SwitchesPage;
 
 public class AllPages {
     public AllPages(){}
@@ -14,7 +18,11 @@ public class AllPages {
     private ViewsPage viewsPage;
     private DateWidgetsPage dateWidgetsPage;
     private ExpandableListPage expandableListPage;
-
+    //below belongs to IOS app
+    private HomePage homePage;
+    private AlertViewsPage alertViewsPage;
+    private SwitchesPage switchesPage;
+    private PickerViewsPage pickerViewsPage;
 
     //create public methods with class return type and put the condition
     //and create an object and return it
@@ -62,6 +70,47 @@ public class AllPages {
             expandableListPage = new ExpandableListPage();
         }
         return expandableListPage;
+    }
+
+    public HomePage homePage(){
+        if (homePage == null){
+            homePage = new HomePage();
+        }
+        return homePage;
+    }
+
+    public AlertViewsPage alertViewsPage(){
+        if (alertViewsPage == null){
+            alertViewsPage = new AlertViewsPage();
+        }
+        return alertViewsPage;
+    }
+    public MainPage mainPage(){
+        if (mainPage == null){
+            mainPage = new MainPage();
+        }
+        return mainPage;
+    }
+
+    public PreferenceDependenciesPage preferenceDependenciesPage(){
+        if (preferenceDependenciesPage == null){
+            preferenceDependenciesPage = new PreferenceDependenciesPage();
+        }
+        return preferenceDependenciesPage;
+    }
+
+    public SwitchesPage switchesPage(){
+        if (switchesPage == null){
+            switchesPage = new SwitchesPage();
+        }
+        return switchesPage;
+    }
+
+    public PickerViewsPage pickerViewsPage(){
+        if (pickerViewsPage == null){
+            pickerViewsPage = new PickerViewsPage();
+        }
+        return pickerViewsPage;
     }
 
 }
