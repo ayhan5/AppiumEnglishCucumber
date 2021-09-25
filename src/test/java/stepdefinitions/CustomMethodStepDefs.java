@@ -6,7 +6,7 @@ import utilities.ReusableMethods;
 public class CustomMethodStepDefs {
     @When("user click on {string}")
     public void user_click_on(String pageName) {
-        ReusableMethods.goToPage(pageName);
+        ReusableMethods.scrollIntoViewWithUiScrollable(pageName);
     }
 
 }
