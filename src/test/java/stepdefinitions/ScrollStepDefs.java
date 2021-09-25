@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import io.cucumber.java.en.Then;
@@ -10,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Dimension;
 import pages.AllPages;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.time.Duration;
 import java.util.List;
@@ -41,11 +41,12 @@ public class ScrollStepDefs {
 
     @Then("user clicks on Switches with UiScrollable")
     public void userClicksOnSwitchesWithUiScrollable() {
-        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
-
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Switches\"))");
-
-        elements.viewsPage().switchesButton1.click();
+//        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+//        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Switches\"))");
+//        elements.viewsPage().switchesButton1.click();
+      ReusableMethods.scrollWithUiScrollableAndClick("Switches");
 
     }
+
+
 }
