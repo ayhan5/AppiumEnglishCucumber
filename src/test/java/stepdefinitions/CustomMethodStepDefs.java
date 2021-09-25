@@ -1,7 +1,6 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.When;
-import utilities.ReusableMethods;
 
 public class CustomMethodStepDefs {
     @When("user click on {string}")
