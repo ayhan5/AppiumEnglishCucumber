@@ -32,7 +32,7 @@ public class ToastStepDefs {
     public void verify_toast_message() {
        String toastMessage = Driver.getAppiumDriver().findElementByXPath("//android.widget.Toast").getAttribute("name");
         Assert.assertTrue(toastMessage.contains("Add"));
-        System.out.println(toastMessage);
+        System.out.println("Actual toast message: "+toastMessage);
 
     }
 
