@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AllPages;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.HashMap;
 
@@ -26,5 +27,10 @@ public class IOSScrollingStepDefs {
         scrollObject.put("value", "");
         driver.executeScript("mobile:scroll", scrollObject);
         elements.homePage().toolBarsButton.click();
+    }
+
+    @When("user click on {string} page on IOS")
+    public void userClickOnPageOnIOS(String pageName) {
+        ReusableMethods.clickOnPageIOSDevice(pageName);
     }
 }

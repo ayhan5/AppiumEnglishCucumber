@@ -7,3 +7,6 @@
 @scrollTillElement
     Scenario: scroll and find toolbars
       When user scroll and clicks on Toolbars
+@reusableScrollMethod
+    Scenario:  scroll with reusable method
+      When user click on "Switches" page on IOS

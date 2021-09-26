@@ -9,7 +9,11 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/default-cucumber-reports"},
         features="src/test/resources/features",
         glue = "stepdefinitions",
+<<<<<<< HEAD
         tags = "@spinner",
+=======
+        tags = "@reusableScrollMethod",
+>>>>>>> 4bdf60b844954d959933ac1051973737d2ab0a27
         dryRun = false
 )
 public class Runner {
