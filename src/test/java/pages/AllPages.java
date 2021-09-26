@@ -18,6 +18,7 @@ public class AllPages {
     private ViewsPage viewsPage;
     private DateWidgetsPage dateWidgetsPage;
     private ExpandableListPage expandableListPage;
+    private SpinnerPage spinnerPage;
     //below belongs to IOS app
     private HomePage homePage;
     private AlertViewsPage alertViewsPage;
@@ -111,6 +112,12 @@ public class AllPages {
             pickerViewsPage = new PickerViewsPage();
         }
         return pickerViewsPage;
+    }
+    public SpinnerPage spinnerPage(){
+        if (spinnerPage == null){
+            spinnerPage = new SpinnerPage();
+        }
+        return spinnerPage;
     }
 
 }
